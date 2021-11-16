@@ -25,5 +25,11 @@ export class RetailerService {
     
   }
 
+  public login(data: any):Observable<any>{
+    this.baseUrl = this.environmentService.environment.AssistAPI_URL;
+    const url = `${this.baseUrl}/api/v1/auth/RetailerToken`
+    return this.httpClient.post(url,data,{responseType: 'text'});
+  }
+
   
 }

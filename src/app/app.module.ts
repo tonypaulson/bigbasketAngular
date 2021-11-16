@@ -1,13 +1,16 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AllRetailersComponent } from './components/all-retailers/all-retailers.component';
 import { AppConfigService } from './services/app.config.service';
 import { RetailerService } from './services/retailer.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+
 
 const providers = [
   AppConfigService,
@@ -18,12 +21,15 @@ const providers = [
   declarations: [
     AppComponent,
     HomeComponent,
-    AllRetailersComponent
+    AllRetailersComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
@@ -32,6 +38,7 @@ const providers = [
       deps: [AppConfigService],
       multi: true
     },
+    {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true},
     providers
   ],
   bootstrap: [AppComponent]

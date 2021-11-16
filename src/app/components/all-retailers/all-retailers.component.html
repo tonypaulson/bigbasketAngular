@@ -1,1 +1,17 @@
-<p>all-retailers works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Supermarket</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let retailer of retailers">
+        <td>{{retailer.username}}</td>
+        <td>{{retailer.address}}</td>
+       
+      </tr>
+    </tbody>
+  </table>
+  
