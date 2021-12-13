@@ -1,0 +1,19 @@
+.backgroundimg{
+    
+    background-image: url('https://wallpaperaccess.com/full/2483962.jpg');
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    height:100vh;
+
+    width:100%;
+}
+
+.navbar{
+
+  
+}

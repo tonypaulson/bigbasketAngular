@@ -1,0 +1,18 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let plan of plans">
+            <td>{{plan.name}}</td>
+            <td>{{plan.amount}}</td>
+            <td>{{plan.details}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

@@ -10,6 +10,10 @@ import { AppConfigService } from './services/app.config.service';
 import { RetailerService } from './services/retailer.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { AllplansComponent } from './components/allplans/allplans.component';
+import { AddplanComponent } from './components/addplan/addplan.component';
+import { SignUPComponent } from './components/sign-up/sign-up.component';
+
 
 
 const providers = [
@@ -22,7 +26,10 @@ const providers = [
     AppComponent,
     HomeComponent,
     AllRetailersComponent,
-    routingComponents
+    routingComponents,
+    AllplansComponent,
+    AddplanComponent,
+    SignUPComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +37,7 @@ const providers = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
+   
   ],
   providers: [
     {
