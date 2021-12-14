@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RetailerService } from 'src/app/services/retailer.service';
-import { userdetails } from 'src/app/user-details';
+import { UserDetails } from 'src/app/user-details';
 
 
 @Component({
@@ -10,9 +10,7 @@ import { userdetails } from 'src/app/user-details';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  formGroup: FormGroup|any ;
-   details = new userdetails();
-  
+  formGroup: FormGroup|any;
 
   constructor(public service:RetailerService) { }
 
@@ -36,15 +34,15 @@ export class LoginComponent implements OnInit {
           document.cookie=`token=${result}`;
           const x = this;
           this.service.getUser().subscribe(result=>{
-            x.details = result;
-            console.log(x.details);
-          })
-          
+            console.log(result);
+            UserDetails.Id = result.Id;
+            UserDetails.Email = result.Email;
+            UserDetails.Username = result.Username;
+          })          
         }
         else{
           alert("Invalid username or password");
         }
-          
       })
     }
   }
