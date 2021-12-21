@@ -1,31 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4 offset-md-4 mt-4">
-      <div class="card">
-        <div class="text-center">
+    <div class="col-md-4 offset-md-4 mt-4">     
+        <form [formGroup]="formGroup" class="form" (ngSubmit)="signinprocess()">
           <h1>SignUp</h1>
-        </div>
-        <form [formGroup]="formGroup" (ngSubmit)="signinprocess()">
             <div class="form-group">
-              <label for="Username">Username</label>
               <input type="text" class="form-control" id="username"  placeholder="Enter username" formControlName="Username">            
             </div>
 
             <div class="form-group">
-              <label for="email">Email address</label>
               <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" formControlName="Email">
               <span *ngIf="formGroup.get('Email').invalid && formGroup.get('Email').touched" class="error" style="color: red;">email is required</span>           
             </div>
 
 
             <div class="form-group">
-              <label for="password">Password</label>
               <input type="password" class="form-control" id="password" placeholder="Password" formControlName="Password">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-     </div>
+            <button type="submit"  id="submit">Submit</button>
+        </form>    
         
     </div>
 

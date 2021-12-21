@@ -1,1 +1,24 @@
-<p>addplan works!</p>
+
+<div class="row">
+    <div class="col-md-4 offset-md-4 mt-4">
+        <form [formGroup]="formGroup" class="form" (ngSubmit)="addplan()">
+          <h1>Add Plan</h1>
+            <div class="form-group">
+              <input type="text" class="form-control" id="text" placeholder="Enter name" formControlName="Name">
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" id="Amount" placeholder="Enter Amount" formControlName="Amount">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="Details" placeholder="Enter Details" formControlName="Details">
+              </div>
+
+            
+            <button type="submit"  id="submit">Submit</button>
+        </form>
+        
+    </div>
+
+</div>

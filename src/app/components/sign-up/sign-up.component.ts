@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RetailerService } from 'src/app/services/retailer.service';
 
 
@@ -11,7 +12,7 @@ import { RetailerService } from 'src/app/services/retailer.service';
 export class SignUPComponent implements OnInit {
   formGroup: FormGroup| any;
 
-  constructor(public service:RetailerService) { }
+  constructor(public service:RetailerService,private router:Router) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -34,6 +35,7 @@ signinprocess(){
       }
       else{
           alert("Retailer registered")
+          this.router.navigate(['/user'])
       }
     })
   }

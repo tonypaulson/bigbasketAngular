@@ -1,4 +1,5 @@
-<div class="container">
+<div class="col-md-4 offset-md-4 mt-4">
+  <form class='form'>
     <table class="table">
         <thead>
           <tr>
@@ -8,11 +9,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let plan of plans">
+          <tr *ngFor="let plan of plans.result">
             <td>{{plan.name}}</td>
             <td>{{plan.amount}}</td>
             <td>{{plan.details}}</td>
           </tr>
         </tbody>
       </table>
-    </div>
+      </form>
+</div>

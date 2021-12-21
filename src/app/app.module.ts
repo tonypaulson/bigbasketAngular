@@ -13,7 +13,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { AllplansComponent } from './components/allplans/allplans.component';
 import { AddplanComponent } from './components/addplan/addplan.component';
 import { SignUPComponent } from './components/sign-up/sign-up.component';
-
+import { UserComponent } from './components/user/user.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 const providers = [
@@ -29,7 +30,9 @@ const providers = [
     routingComponents,
     AllplansComponent,
     AddplanComponent,
-    SignUPComponent
+    SignUPComponent,
+    UserComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
